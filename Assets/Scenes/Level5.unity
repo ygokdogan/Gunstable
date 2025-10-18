@@ -345,11 +345,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4903569382602518792, guid: bf0953a6b05c44065bd83ca181f2e2f1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -30.914032
+      value: -31.29945
       objectReference: {fileID: 0}
     - target: {fileID: 4903569382602518792, guid: bf0953a6b05c44065bd83ca181f2e2f1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.188301
+      value: 17.193253
       objectReference: {fileID: 0}
     - target: {fileID: 7828364458918207187, guid: bf0953a6b05c44065bd83ca181f2e2f1, type: 3}
       propertyPath: Lens.OrthographicSize
@@ -5333,8 +5333,8 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 192284855
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -5514,8 +5514,8 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1297597089
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}

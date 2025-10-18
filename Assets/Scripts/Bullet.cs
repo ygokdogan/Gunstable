@@ -53,10 +53,6 @@ public class Bullet : MonoBehaviour
                 var damageable = other.gameObject.GetComponent<IDamageable>();
                 if (damageable != null)
                 {
-                    if (other.gameObject.TryGetComponent(out PlayerController player))
-                    {
-                        player.SetDamageSource(transform.position);
-                    }
                     damageable.Damage(damage);
                 }
                 var ps = Instantiate(particle, transform.position, Quaternion.identity);

@@ -35,9 +35,7 @@ namespace Player
         
         public float coyoteTime = 0.15f;
         private float coyoteTimer;
-
-        private Vector2 damageSourcePos;
-
+        
         private int currentHealth;
         [Range(1, 6)] private int jetpackDice;
         public int FacingDirection { get; private set; }
@@ -224,11 +222,6 @@ namespace Player
             }
         }
 
-        public void SetDamageSource(Vector2 source)
-        {
-            damageSourcePos = source;
-        }
-
         public void SetIsHacked(bool hacked)
         {
             isHacked = hacked;
@@ -237,6 +230,7 @@ namespace Player
 
         public void Die()
         {
+            Time.timeScale = 1f;
             Destroy(gameObject);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
