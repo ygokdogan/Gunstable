@@ -29,6 +29,7 @@ namespace Enemies
             base.Awake();
             state = EnemyGunnerState.Idle;
             gunTransform = gunAnim.transform;
+            cooldownTimer = shootCooldown;
         }
 
         protected override void Update()

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerData
   maxHealth: 1000
   moveSpeed: 10
-  jumpForce: 16
+  jumpForce: 25
   jumpDuration: 0.01
   shootCooldown: 0.2
-  acquiredJetpack: 0
+  acquiredJetpack: 1
   jetpackForce: 10

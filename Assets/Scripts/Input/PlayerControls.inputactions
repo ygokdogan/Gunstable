@@ -130,6 +130,17 @@
                 },
                 {
                     "name": "",
+                    "id": "0316e1b6-f739-4e96-8d6b-9f86df0dc6c2",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "736f6299-d250-40b4-9f13-45815a606f62",
                     "path": "<Mouse>/position",
                     "interactions": "",

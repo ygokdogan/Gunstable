@@ -63,6 +63,11 @@ namespace Enemies
                 return;
             }
 
+            if (isOnLedge || hitWall)
+            {
+                return;
+            }
+
             rb.linearVelocity = direction * moveSpeed;
             anim.SetBool("walk", true);
             anim.SetBool("idle", false);

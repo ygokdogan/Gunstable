@@ -30,6 +30,9 @@ namespace Player
         private float recoilStartTime;
         private float jumpStartTime;
         private float lastRollTime;
+        
+        public float coyoteTime = 0.15f;
+        private float coyoteTimer;
 
         private Vector2 damageSourcePos;
 
@@ -104,11 +107,12 @@ namespace Player
         {
             if (data.acquiredJetpack && !isHacked) return;
 
-            if (input.JumpInput && canJump)
+            if (input.JumpInput && (canJump || coyoteTimer > 0f))
             {
                 input.UseJumpInput();
                 isJumping = true;
                 jumpStartTime = Time.time;
+                coyoteTimer = 0f;
             }
 
             if (isJumping)
@@ -121,7 +125,7 @@ namespace Player
                 }
             }
 
-            canJump = isGrounded;
+            canJump = isGrounded || coyoteTimer > 0f;
         }
 
         private void HandleJetpack()
@@ -147,7 +151,7 @@ namespace Player
                 if (!isRolling && Time.time >= lastRollTime + 0.05f)
                 {
                     isRolling = true;
-                    diceCoroutine = StartCoroutine(RollDice(1f));
+                    diceCoroutine = StartCoroutine(RollDice(0.72f));
                 }
             }
 
@@ -188,7 +192,12 @@ namespace Player
 
         private void CheckCollisions()
         {
+            bool wasGrounded = isGrounded;
             isGrounded = Physics2D.OverlapCircleAll(groundCheck.position, groundCheckRadius, groundLayer).Length > 0;
+
+            // Reset coyote timer if we just landed
+            if (isGrounded && !wasGrounded)
+                coyoteTimer = coyoteTime;
         }
 
         #endregion

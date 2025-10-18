@@ -38,6 +38,8 @@ namespace Enemies
         public float groundCheckRadius;
         public float wallCheckDistance;
 
+        public ParticleSystem bloodParticles;
+
         private FlashEffect flash;
         
         public int FacingDirection { get; private set; }
@@ -114,6 +116,9 @@ namespace Enemies
 
         public virtual void Die()
         {
+            var ps = Instantiate(bloodParticles, transform.position, Quaternion.identity);
+            ps.Play();
+            Destroy(ps.gameObject, 4f);
         }
     }
 }
