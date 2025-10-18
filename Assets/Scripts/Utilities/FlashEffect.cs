@@ -14,8 +14,7 @@ namespace Utilities
 
         private void Awake()
         {
-            if (!spriteRenderer)
-                spriteRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
 
             originalMaterial = spriteRenderer.material;
         }

@@ -4,6 +4,7 @@ using Input;
 using Interfaces;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 namespace Player
@@ -26,6 +27,7 @@ namespace Player
         private bool jetpackFailed = false;
         private bool isHacked = false;
         private bool hasSlowedTime = false;
+        public bool isChangingScene = false;
         
         private float recoilStartTime;
         private float jumpStartTime;
@@ -210,11 +212,7 @@ namespace Player
         public void Damage(int damage)
         {
             currentHealth -= damage;
-            
-            var knockbackDir = -(damageSourcePos - (Vector2)transform.position);
-            knockbackDir.Normalize();
 
-            ApplyRecoil(knockbackDir, 20f);
             if (!hasSlowedTime)
             {
                 StartCoroutine(SlowTimeOnDamage(0.2f));
@@ -240,6 +238,7 @@ namespace Player
         public void Die()
         {
             Destroy(gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         public void UnlockJetpack()

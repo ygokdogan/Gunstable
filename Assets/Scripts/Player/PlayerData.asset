@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45256d6e60eb4538850cec32cfd0fc6c, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerData
-  maxHealth: 1000
+  maxHealth: 3
   moveSpeed: 10
   jumpForce: 25
   jumpDuration: 0.01

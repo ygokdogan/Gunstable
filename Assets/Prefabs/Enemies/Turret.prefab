@@ -5073,7 +5073,7 @@ MonoBehaviour:
   wallCheckDistance: 0
   bloodParticles: {fileID: 7559394508267886402}
   cooldown: 3
-  bulletPrefab: {fileID: 2626888026908994402, guid: 361d153a389044a5db7fed82d3794282, type: 3}
+  bulletPrefab: {fileID: 2626888026908994402, guid: dde65caa9a9d14bc08847f9ee9e40e6e, type: 3}
   shootPos: {fileID: 2584640383655556952}
 --- !u!61 &6688556269757083207
 BoxCollider2D:

@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Utilities.FlashEffect
   spriteRenderer: {fileID: 0}
-  flashMaterial: {fileID: 0}
+  flashMaterial: {fileID: 2100000, guid: 1a3a7199cd7354a7d9f4dd589aab12ed, type: 2}
   flashDuration: 0.1
 --- !u!1 &1708295951658563488
 GameObject:
@@ -252,9 +252,14 @@ MonoBehaviour:
   ledgeCheckBack: {fileID: 8322454907281641928}
   wallCheckBack: {fileID: 7620340638716849284}
   groundCheckRadius: 0.2
-  wallCheckDistance: 0.3
+  wallCheckDistance: 0.5
   bloodParticles: {fileID: 4179907014426319822}
   explosionEffect: {fileID: 6365061707112250910, guid: 1a015e4bcdd1e40f79efcfa97fbb3f11, type: 3}
+  chaseRange: 10
+  explodeRange: 2
+  explodeRadius: 3
+  jumpExplodeDelay: 0.2
+  explodeDelay: 0.2
 --- !u!61 &900776827014694244
 BoxCollider2D:
   m_ObjectHideFlags: 0

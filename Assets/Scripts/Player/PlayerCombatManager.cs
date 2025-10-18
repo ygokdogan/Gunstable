@@ -127,7 +127,7 @@ namespace Player
         private Vector2 DetermineShootDirection()
         {
             var mousePos = Camera.main.ScreenToWorldPoint(input.MousePosition);
-            var shootDir = mousePos - player.transform.position;
+            var shootDir = mousePos - shootPos.position;
             return shootDir.normalized;
         }
 

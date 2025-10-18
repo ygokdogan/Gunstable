@@ -88,6 +88,16 @@ namespace Enemies
         {
             rb.linearVelocity = Vector2.zero;
             var shootDir = player.transform.position - transform.position;
+
+            var hit = Physics2D.Raycast(shootPos.position, shootDir, 10f, groundLayer);
+            
+            var distToPlayer = Vector2.Distance(player.transform.position, transform.position);
+            var distToHit = Vector2.Distance(hit.point, transform.position);
+
+            if (distToHit < distToPlayer)
+            {
+                return;
+            }
             
             if (CanShoot())
             {

@@ -74,7 +74,6 @@ GameObject:
   - component: {fileID: 4345663371460143373}
   - component: {fileID: 7408782296530267043}
   - component: {fileID: 92411399356598280}
-  - component: {fileID: 233088454536013468}
   m_Layer: 0
   m_Name: Hacker
   m_TagString: Enemy
@@ -205,21 +204,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1.3585467}
   m_EdgeRadius: 0
---- !u!114 &233088454536013468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2126838822157835379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9034317712bcb43a28721b7b077aa1b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Utilities.FlashEffect
-  spriteRenderer: {fileID: 0}
-  flashMaterial: {fileID: 0}
-  flashDuration: 0.1
 --- !u!1 &3094011948427132855
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,6 +277,7 @@ GameObject:
   - component: {fileID: 605675807155696711}
   - component: {fileID: 5462026918472362183}
   - component: {fileID: 9039756165586824018}
+  - component: {fileID: 5905058174188495306}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -395,6 +380,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5905058174188495306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7427931938399995065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9034317712bcb43a28721b7b077aa1b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Utilities.FlashEffect
+  spriteRenderer: {fileID: 0}
+  flashMaterial: {fileID: 2100000, guid: 1a3a7199cd7354a7d9f4dd589aab12ed, type: 2}
+  flashDuration: 0.1
 --- !u!1 &8873483750895116289
 GameObject:
   m_ObjectHideFlags: 0

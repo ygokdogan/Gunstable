@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Utilities.FlashEffect
   spriteRenderer: {fileID: 0}
-  flashMaterial: {fileID: 0}
+  flashMaterial: {fileID: 2100000, guid: 1a3a7199cd7354a7d9f4dd589aab12ed, type: 2}
   flashDuration: 0.1
 --- !u!1 &6211089312584706752
 GameObject:
@@ -351,7 +351,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.47, y: -3, z: 0}
-  m_LocalScale: {x: 0.8, y: 1.4883721, z: 1.4883721}
+  m_LocalScale: {x: 1, y: 1.860465, z: 1.860465}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 431135022402274662}
@@ -461,7 +461,7 @@ MonoBehaviour:
   groundCheckRadius: 0.2
   wallCheckDistance: 0.4
   bloodParticles: {fileID: 1332436799439006280}
-  bulletPrefab: {fileID: 2626888026908994402, guid: 35217c89123094cbe86602165a8a51e6, type: 3}
+  bulletPrefab: {fileID: 2626888026908994402, guid: 361d153a389044a5db7fed82d3794282, type: 3}
   shootCooldown: 1.5
   minDistanceToFlee: 5
   stopFleeDistance: 8
@@ -608,7 +608,7 @@ Transform:
   m_GameObject: {fileID: 7670219689646315840}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.63, y: 0.13, z: 0}
+  m_LocalPosition: {x: -0.4, y: 0.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

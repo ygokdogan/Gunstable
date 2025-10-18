@@ -14,7 +14,7 @@ public class Bullet : MonoBehaviour
     public ParticleSystem particle;
     public float speed;
 
-    private float lifeTime = 2f;
+    public float lifeTime = 2f;
     private float lifeTimer;
 
     private void Awake()
@@ -36,8 +36,7 @@ public class Bullet : MonoBehaviour
     public void Setup(Vector2 direction, GameObject source)
     {
         this.direction = direction;
-        this.direction.Normalize();
-
+        direction.Normalize();
         this.source = source;
 
         transform.right = this.direction;

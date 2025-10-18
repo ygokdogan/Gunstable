@@ -15,7 +15,7 @@ namespace Enemies
             cooldownTimer -= Time.deltaTime;
             if (cooldownTimer <= 0f)
             {
-                StartCoroutine(BurstShot(3, 0.2f));
+                StartCoroutine(BurstShot(3, 0.4f));
                 cooldownTimer = cooldown;
             }
         }
@@ -32,7 +32,7 @@ namespace Enemies
 
         private void Fire()
         {
-            var bulletObj =Instantiate(bulletPrefab, shootPos.position, Quaternion.identity);
+            var bulletObj = Instantiate(bulletPrefab, shootPos.position, Quaternion.identity);
             var bullet = bulletObj.GetComponent<Bullet>();
             
             bullet.Setup(transform.right, gameObject);
