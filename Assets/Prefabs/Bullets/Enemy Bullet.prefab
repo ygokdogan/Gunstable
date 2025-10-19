@@ -111,7 +111,7 @@ MonoBehaviour:
   type: 0
   fireClip: {fileID: 8300000, guid: edb23017c90b44f268435ce4a9cc35a0, type: 3}
   particle: {fileID: 2567842838921083562}
-  speed: 35
+  speed: 45
   lifeTime: 2
 --- !u!50 &-8734886554894102413
 Rigidbody2D:

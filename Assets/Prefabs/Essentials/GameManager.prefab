@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7334c71dc66b24ad49aa2e60fab916f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Managers.GameManager
-  audioManager: {fileID: 0}
+  audioManager: {fileID: 3237765199808506821}
+  gameStarted: 0
 --- !u!114 &3237765199808506821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,7 +101,7 @@ MonoBehaviour:
     isMusic: 0
     source: {fileID: 0}
   - name: Hurt
-    clip: {fileID: 8300000, guid: f6a7ddbbd88ca4260a90307e39287538, type: 3}
+    clip: {fileID: 8300000, guid: 51c03c4ad56264dc4b02cdfdae7c1060, type: 3}
     volume: 1
     pitch: 1
     loop: 0

@@ -33,10 +33,13 @@ namespace Player
         private bool isHacked = false;
         private bool hasSlowedTime = false;
         public bool isChangingScene = false;
+        private bool isDead = false;
         
         private float recoilStartTime;
         private float jumpStartTime;
         private float lastRollTime;
+
+        public Vector2 knockbackDir;
         
         public float coyoteTime = 0.15f;
         private float coyoteTimer;
@@ -52,7 +55,6 @@ namespace Player
 
         private void Awake()
         {
-            input = GetComponent<InputHandler>();
             rb = GetComponent<Rigidbody2D>();
             animController = GetComponent<PlayerAnimatorController>();
             interactableTrigger = GetComponent<PlayerInteractableTrigger>();
@@ -63,8 +65,10 @@ namespace Player
 
         private void Start()
         {
+            input = GameManager.instance.input;
             currentHealth = data.maxHealth;
             diceCoroutine = null;
+            isDead = false;
         }
 
         private void Update()
@@ -224,14 +228,15 @@ namespace Player
         {
             currentHealth -= damage;
             healthDisplay.UpdateDisplay(currentHealth);
-            AudioManager.Instance.Play("Hurt");
+            GameManager.instance.audioManager.Play("Hurt");
+            ApplyRecoil(knockbackDir, 5f);
 
             if (!hasSlowedTime)
             {
                 StartCoroutine(SlowTimeOnDamage(0.2f));
             }
             
-            if (currentHealth <= 0)
+            if (currentHealth <= 0 && !isDead)
             {
                 Die();
             }
@@ -246,7 +251,11 @@ namespace Player
         public void Die()
         {
             Time.timeScale = 1f;
-            StartCoroutine(RestartLevel(0.43f));
+            if (!isDead)
+            {
+                StartCoroutine(RestartLevel(0.43f));
+                isDead = true;  
+            }
         }
 
         public void UnlockJetpack()

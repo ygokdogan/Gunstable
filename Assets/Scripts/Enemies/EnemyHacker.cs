@@ -15,6 +15,8 @@ namespace Enemies
 
         private float flipDuration = 0.6f;
         private float flipStartTime;
+        
+        private float lastFlipTime;
 
         private int initialFearDir;
         
@@ -66,8 +68,17 @@ namespace Enemies
         {
             rb.linearVelocity = Vector2.zero;
             
-            var dist = Vector2.Distance(player.transform.position, transform.position);
-            if (dist < fearRange)
+            var hit = Physics2D.Raycast(transform.position, player.transform.position - transform.position, 10f, groundLayer);
+            
+            var distToPlayer = Vector2.Distance(player.transform.position, transform.position);
+            var distToHit = Vector2.Distance(hit.point, transform.position);
+
+            if (distToHit < distToPlayer)
+            {
+                return;
+            }
+            
+            if (distToPlayer < fearRange)
             {
                 SwitchState(EnemyHackerState.Fear);
             }
@@ -86,44 +97,46 @@ namespace Enemies
             }
         }
 
+
         private void HandleFear()
-        { 
+        {
             if (!decidedInitialDir)
             {
                 initialFearDir = player.transform.position.x > transform.position.x ? -1 : 1;
                 decidedInitialDir = true;
-                    
+
                 if (FacingDirection != initialFearDir)
-                {
                     Flip();
-                }
+
                 flipStartTime = Time.time;
             }
 
             rb.linearVelocityX = FacingDirection * fearSpeed;
             var dist = Vector2.Distance(player.transform.position, transform.position);
 
-            if (Time.time >= flipStartTime + flipDuration || isOnLedge || hitWall)
+            // Kenar veya duvar algılanınca döndür ama spam olmasın
+            if (isOnLedge || hitWall)
             {
-                Flip();
+                FlipWithCooldown(0.2f);
             }
 
-            if (dist <= 1f)
-            {
-                var playerDir = player.transform.position.x > transform.position.x ? 1 : -1;
-                if (FacingDirection == playerDir)
-                {
-                    Flip();
-                }
-            }
-            
+            // Oyuncudan yeterince uzaklaştıysa korkuyu bırak
             if (dist > fearRange + 3f)
             {
                 decidedInitialDir = false;
                 SwitchState(EnemyHackerState.Idle);
             }
-            
         }
+
+        private void FlipWithCooldown(float cooldown = 0.5f)
+        {
+            if (Time.time - lastFlipTime > cooldown)
+            {
+                Flip();
+                lastFlipTime = Time.time;
+            }
+        }
+
 
         private void HandlePatrolling()
         {

@@ -15,5 +15,7 @@ namespace Player
 
         public bool acquiredJetpack = false;
         public float jetpackForce = 10f;
+
+        public float highScore = 0f;
     }
 }

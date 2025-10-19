@@ -19,3 +19,4 @@ MonoBehaviour:
   shootCooldown: 0.2
   acquiredJetpack: 0
   jetpackForce: 10
+  highScore: 388.45

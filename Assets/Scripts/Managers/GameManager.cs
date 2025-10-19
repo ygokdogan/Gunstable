@@ -1,5 +1,8 @@
 using System;
+using Input;
+using Player;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using Utilities;
 
@@ -10,20 +13,30 @@ namespace Managers
         public static GameManager instance;
         
         public AudioManager audioManager;
+        public PlayerData playerData;
+        public InputHandler input;
         
         private float speedrunTimer = 0f;
-        private bool gameStarted = false;
+        public bool gameStarted = false;
         private bool isPaused;
         private void Awake()
         {
             if(instance != null)
-                Destroy(gameObject);
+                Destroy(instance.gameObject);
         
             instance = this;
             DontDestroyOnLoad(gameObject);
             
-            speedrunTimer = 0f;
             audioManager = GetComponent<AudioManager>();
+            if (input == null)
+            {
+                input = GetComponent<InputHandler>();
+            }
+        }
+
+        private void Start()
+        {
+            speedrunTimer = 0f;
             audioManager.Play("MainMenuMusic");
         }
 
@@ -33,6 +46,8 @@ namespace Managers
             {
                 speedrunTimer += Time.deltaTime;
             }
+            
+            ReturnToMenu();
         }
 
         public void PauseGame(GameObject menuPanel)
@@ -47,8 +62,21 @@ namespace Managers
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             gameStarted = true;
+            playerData.acquiredJetpack = false;
             audioManager.Stop("MainMenuMusic");
             audioManager.Play("InGameMusic");
+        }
+
+        private void ReturnToMenu()
+        {
+            if (gameStarted)
+            {
+                if (input.PauseInput)
+                {
+                    input.UsePauseInput();
+                    SceneManager.LoadScene(0);
+                }
+            }
         }
 
         public void Exit()

@@ -226,7 +226,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1262373688743560417, guid: 529ba696515864ed58bbd1ca7f9edcd0, type: 3}
   m_PrefabInstance: {fileID: 5687744059355758691}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1332677015}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7334c71dc66b24ad49aa2e60fab916f0, type: 3}
@@ -1417,6 +1417,54 @@ MonoBehaviour:
   - {fileID: 1804562070}
   - {fileID: 773776059}
   - {fileID: 1920262735}
+--- !u!1 &1332677015 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1349120439800489617, guid: 529ba696515864ed58bbd1ca7f9edcd0, type: 3}
+  m_PrefabInstance: {fileID: 5687744059355758691}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1332677018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332677015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd6a9f54d1db341439e8ce31d7ee564f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Input.InputHandler
+  inputHoldTime: 0.2
+--- !u!114 &1332677019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332677015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
+  m_Actions: {fileID: -944628639613478452, guid: d866c5c48c45d4955b1ac191e12ffb19, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Gameplay
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1638632520
 GameObject:
   m_ObjectHideFlags: 0
@@ -2374,6 +2422,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1262373688743560417, guid: 529ba696515864ed58bbd1ca7f9edcd0, type: 3}
+      propertyPath: playerData
+      value: 
+      objectReference: {fileID: 11400000, guid: 126abcc0e8a314342a2173603c7cd530, type: 2}
     - target: {fileID: 1349120439800489617, guid: 529ba696515864ed58bbd1ca7f9edcd0, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -2421,7 +2473,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1349120439800489617, guid: 529ba696515864ed58bbd1ca7f9edcd0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1332677019}
+    - targetCorrespondingSourceObject: {fileID: 1349120439800489617, guid: 529ba696515864ed58bbd1ca7f9edcd0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1332677018}
   m_SourcePrefab: {fileID: 100100000, guid: 529ba696515864ed58bbd1ca7f9edcd0, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

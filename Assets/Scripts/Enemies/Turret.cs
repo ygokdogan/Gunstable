@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Enemies
@@ -11,6 +12,12 @@ namespace Enemies
         public GameObject bulletPrefab;
         public Transform shootPos;
         public GameObject cantBeDamagedText;
+
+        protected override void Start()
+        {
+            base.Start();
+            cantBeDamagedText.SetActive(false);
+        }
 
         protected override void Update()
         {

@@ -9,8 +9,6 @@ using System.Collections;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager Instance { get; private set; }
-
     [Header("Sound Library")]
     [SerializeField] private Sound[] sounds;
 
@@ -21,29 +19,7 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        // Singleton setup
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-
-        // Initialize sounds and AudioSources
-        foreach (Sound s in sounds)
-        {
-            s.source = gameObject.AddComponent<AudioSource>();
-            s.source.clip = s.clip;
-            s.source.loop = s.loop;              // ✅ loop applied here
-            s.source.playOnAwake = s.playOnAwake;
-            s.source.volume = s.volume;
-            s.source.pitch = s.pitch;
-
-            if (s.playOnAwake)
-                s.source.Play();
-        }
-
+        InitializeSounds();
         // Load saved volumes
         LoadSavedVolumes();
     }
@@ -58,6 +34,7 @@ public class AudioManager : MonoBehaviour
             }
 
             float baseVolume = s.isMusic ? musicVolume : sfxVolume;
+            Debug.Log(s.source);
             s.source.volume = s.volume * baseVolume * masterVolume;
             s.source.pitch = s.pitch;
 
@@ -107,6 +84,25 @@ public class AudioManager : MonoBehaviour
             masterVolume = PlayerPrefs.GetFloat("MasterVol", 1f);
             musicVolume = PlayerPrefs.GetFloat("MusicVol", 1f);
             sfxVolume = PlayerPrefs.GetFloat("SFXVol", 1f);
+        }
+        
+        private void InitializeSounds()
+        {
+            foreach (Sound s in sounds)
+            {
+                if (s.source == null)
+                {
+                    s.source = gameObject.AddComponent<AudioSource>();
+                    s.source.clip = s.clip;
+                    s.source.loop = s.loop;
+                    s.source.playOnAwake = s.playOnAwake;
+                    s.source.volume = s.volume;
+                    s.source.pitch = s.pitch;
+
+                    if (s.playOnAwake)
+                        s.source.Play();
+                }
+            }
         }
     }
 

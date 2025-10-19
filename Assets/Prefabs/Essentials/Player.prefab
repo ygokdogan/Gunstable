@@ -415,6 +415,7 @@ MonoBehaviour:
   withJetpack: {fileID: 8702489975931089908}
   withoutJetpack: {fileID: 8459677525114229159}
   flash: {fileID: 0}
+  gunObj: {fileID: 3952998016498116228}
 --- !u!114 &3196023883267394783
 MonoBehaviour:
   m_ObjectHideFlags: 0

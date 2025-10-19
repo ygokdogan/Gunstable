@@ -93,7 +93,7 @@ namespace Enemies
             if (x > 0 && FacingDirection != 1 || x < 0 && FacingDirection != -1) Flip();
         }
 
-        protected void Flip()
+        protected virtual void Flip()
         {
             transform.Rotate(0, 180, 0);
             FacingDirection *= -1;
@@ -107,7 +107,7 @@ namespace Enemies
         public virtual void Damage(int damage)
         {
             currentHealth -= damage;
-            CameraShake.Shake(5f, 0.1f);
+            CameraShake.Shake(13f, 0.1f);
             flash?.TriggerFlash();
             GameManager.instance.audioManager.Play("Hit");
             if (currentHealth <= 0)
