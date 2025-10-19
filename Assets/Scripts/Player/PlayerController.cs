@@ -2,9 +2,12 @@ using System;
 using System.Collections;
 using Input;
 using Interfaces;
+using Managers;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using Utilities;
 using Random = UnityEngine.Random;
 
 namespace Player
@@ -13,8 +16,10 @@ namespace Player
     {
         public PlayerData data;
         private PlayerAnimatorController animController;
+        private PlayerInteractableTrigger interactableTrigger;
         private Rigidbody2D rb;
         private InputHandler input;
+        [SerializeField] private HealthDisplay healthDisplay;
 
         [Header("Collisions")] public LayerMask groundLayer;
         public Transform groundCheck;
@@ -50,6 +55,7 @@ namespace Player
             input = GetComponent<InputHandler>();
             rb = GetComponent<Rigidbody2D>();
             animController = GetComponent<PlayerAnimatorController>();
+            interactableTrigger = GetComponent<PlayerInteractableTrigger>();
 
             jumpStartTime = -2f;
             FacingDirection = 1;
@@ -147,6 +153,8 @@ namespace Player
                 animController.anim.SetBool("idle", false);
                 
                 dice.gameObject.SetActive(true);
+                
+                GameManager.instance.audioManager.Play("JetpackLoop");
 
                 if (!isRolling && Time.time >= lastRollTime + 0.05f)
                 {
@@ -154,6 +162,8 @@ namespace Player
                     diceCoroutine = StartCoroutine(RollDice(0.72f));
                 }
             }
+            
+            GameManager.instance.audioManager.Stop("JetpackLoop");
 
             if (input.JumpInputReleased && rb.linearVelocityY > 0.1f)
             {
@@ -186,6 +196,7 @@ namespace Player
         {
             transform.Rotate(0, 180, 0);
             FacingDirection *= -1;
+            interactableTrigger.FlipInteractPrompt();
         }
 
         #region Collision
@@ -210,6 +221,8 @@ namespace Player
         public void Damage(int damage)
         {
             currentHealth -= damage;
+            healthDisplay.UpdateDisplay(currentHealth);
+            AudioManager.Instance.Play("Hurt");
 
             if (!hasSlowedTime)
             {

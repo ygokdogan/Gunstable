@@ -109,8 +109,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
   damage: 1
   type: 1
+  fireClip: {fileID: 8300000, guid: edb23017c90b44f268435ce4a9cc35a0, type: 3}
   particle: {fileID: 5287866399350772588}
   speed: 50
+  lifeTime: 2
 --- !u!50 &5840397491747398957
 Rigidbody2D:
   serializedVersion: 5

@@ -109,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
   damage: 1
   type: 0
+  fireClip: {fileID: 8300000, guid: edb23017c90b44f268435ce4a9cc35a0, type: 3}
   particle: {fileID: 2567842838921083562}
   speed: 10
   lifeTime: 8

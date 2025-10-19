@@ -17,5 +17,5 @@ MonoBehaviour:
   jumpForce: 25
   jumpDuration: 0.01
   shootCooldown: 0.2
-  acquiredJetpack: 1
+  acquiredJetpack: 0
   jetpackForce: 10

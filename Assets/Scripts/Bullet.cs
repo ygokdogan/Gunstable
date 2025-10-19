@@ -1,5 +1,6 @@
 using System;
 using Interfaces;
+using Managers;
 using Player;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ public class Bullet : MonoBehaviour
 {
     public int damage;
     public BulletType type;
+    public AudioClip fireClip;
 
     private GameObject source;
     private Rigidbody2D rb;
@@ -42,6 +44,7 @@ public class Bullet : MonoBehaviour
         transform.right = this.direction;
 
         lifeTimer = lifeTime;
+        GameManager.instance.audioManager.Play("Fire");
     }
 
     private void OnTriggerEnter2D(Collider2D other)

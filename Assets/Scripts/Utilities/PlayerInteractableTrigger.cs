@@ -11,6 +11,7 @@ namespace Utilities
         private IInteractable interactable;
         private InputHandler input;
         private PlayerController player;
+        public GameObject interactPrompt;
 
         private void Awake()
         {
@@ -23,6 +24,7 @@ namespace Utilities
             if (other.GetComponent<IInteractable>() != null)
             {
                 interactable = other.GetComponent<IInteractable>();
+                interactPrompt.SetActive(true);
             }
         }
 
@@ -31,6 +33,7 @@ namespace Utilities
             if (other.GetComponent<IInteractable>() != null)
             {
                 interactable = null;
+                interactPrompt.SetActive(false);
             }
         }
 
@@ -41,6 +44,11 @@ namespace Utilities
                 input.UseInteractInput();
                 interactable.Interact(player);
             }
+        }
+
+        public void FlipInteractPrompt()
+        {
+            interactPrompt.transform.Rotate(0f, 180f,0f);
         }
     }
 }

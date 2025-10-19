@@ -136,6 +136,11 @@ namespace Enemies
                 if (col.TryGetComponent(out IDamageable damageable))
                 {
                     damageable.Damage(1);
+                    if (player)
+                    {
+                        var dir = player.transform.position - transform.position;
+                        player.ApplyRecoil(dir, 15f);
+                    }
                 }
             }
 

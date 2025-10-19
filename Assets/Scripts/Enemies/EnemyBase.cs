@@ -1,5 +1,6 @@
 using System;
 using Interfaces;
+using Managers;
 using Player;
 using UnityEngine;
 using Utilities;
@@ -108,6 +109,7 @@ namespace Enemies
             currentHealth -= damage;
             CameraShake.Shake(5f, 0.1f);
             flash?.TriggerFlash();
+            GameManager.instance.audioManager.Play("Hit");
             if (currentHealth <= 0)
             {
                 Die();
@@ -118,6 +120,7 @@ namespace Enemies
         {
             var ps = Instantiate(bloodParticles, transform.position, Quaternion.identity);
             ps.Play();
+            GameManager.instance.audioManager.Play("Explode");
             Destroy(ps.gameObject, 4f);
         }
     }

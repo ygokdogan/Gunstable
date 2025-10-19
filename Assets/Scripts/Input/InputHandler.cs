@@ -16,7 +16,7 @@ namespace Input
         public bool JumpInput { get; private set; }
         public bool ShootInput { get; private set; }
         public bool InteractInput { get; private set; }
-        public bool TestInput { get; private set; }
+        public bool PauseInput { get; private set; }
         public bool JumpInputReleased { get; private set; }
         private float jumpInputStartTime;
 
@@ -37,8 +37,8 @@ namespace Input
             };
             controls.Gameplay.Jump.canceled += ctx => JumpInputReleased = true;
             
-            controls.Gameplay.Test.performed += ctx => TestInput = true;
-            controls.Gameplay.Test.canceled += ctx => TestInput = false;
+            controls.Gameplay.Pause.performed += ctx => PauseInput = true;
+            controls.Gameplay.Pause.canceled += ctx => PauseInput = false;
 
             controls.Gameplay.Shoot.performed += ctx => ShootInput = true;
             controls.Gameplay.Shoot.canceled += ctx => ShootInput = false;
@@ -61,7 +61,7 @@ namespace Input
         }
 
         public void UseJumpInput() => JumpInput = false;
-        public void UseTestInput() => TestInput = false;
+        public void UsePauseInput() => PauseInput = false;
         public void UseShootInput() => ShootInput = false;
         public void UseInteractInput() => InteractInput = false;
 
