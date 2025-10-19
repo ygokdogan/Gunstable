@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b792050e80074bb584e7e7af69a62ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemies.EnemyHacker
-  maxHealth: 3
+  maxHealth: 2
   currentHealth: 0
   moveSpeed: 5
   playerLayer:

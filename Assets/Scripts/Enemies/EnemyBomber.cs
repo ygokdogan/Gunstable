@@ -9,7 +9,6 @@ namespace Enemies
     {
         [Header("Bomber Settings")]
         public GameObject explosionEffect;
-        public float chaseRange = 10f;
         public float explodeRange = 1.5f;
         public float explodeRadius = 3f;
         public float jumpExplodeDelay = 0.2f;
@@ -24,6 +23,7 @@ namespace Enemies
             base.Awake();
             state = EnemyBomberState.Idle;
             isExploding = false;
+            moveAfterChase = false;
             
             anim.SetBool("idle", true);
             anim.SetBool("walk", false);
@@ -67,7 +67,7 @@ namespace Enemies
                 {
                     float dist = Vector2.Distance(player.transform.position, transform.position);
                 
-                    if (dist <= chaseRange  && !(isOnLedge || hitWall))
+                    if (dist <= agroRange  && !(isOnLedge || hitWall))
                     {
                         SwitchState(EnemyBomberState.Chase);
                     }
@@ -124,18 +124,14 @@ namespace Enemies
 
         private void TriggerExplosion(float radius, float offsetY = 0f)
         {
-            var explosion = Instantiate(
-                explosionEffect,
-                new Vector3(transform.position.x, transform.position.y + offsetY, transform.position.z),
-                Quaternion.identity
-            );
+            var explosion = Instantiate(explosionEffect, transform.position, Quaternion.identity);
 
             var cols = Physics2D.OverlapCircleAll(transform.position, radius, playerLayer);
             foreach (var col in cols)
             {
                 if (col.TryGetComponent(out IDamageable damageable))
                 {
-                    damageable.Damage(1);
+                    damageable.Damage(3);
                     if (player)
                     {
                         var dir = player.transform.position - transform.position;
@@ -144,7 +140,8 @@ namespace Enemies
                 }
             }
 
-            StartCoroutine(DestroyAfterDelay(explosion, 0.4f));
+            Destroy(gameObject, .3f);
+            //StartCoroutine(DestroyAfterDelay(explosion, 3));
         }
 
         private IEnumerator DestroyAfterDelay(GameObject obj, float delay)

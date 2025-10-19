@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7257892104639614086}
   - component: {fileID: 1262373688743560417}
+  - component: {fileID: 3237765199808506821}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -45,4 +46,83 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Managers.GameManager
   audioManager: {fileID: 0}
-  musicPlayer: {fileID: 0}
+--- !u!114 &3237765199808506821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349120439800489617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8215b257c8acd435d8b1d5829b1831c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Managers.AudioManager
+  sounds:
+  - name: MainMenuMusic
+    clip: {fileID: 8300000, guid: 982006969d7704f208fbffdaacc7e573, type: 3}
+    volume: 0.154
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    isMusic: 1
+    source: {fileID: 0}
+  - name: InGameMusic
+    clip: {fileID: 8300000, guid: 36e7568812d3f42aba9958ff4541d513, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    isMusic: 1
+    source: {fileID: 0}
+  - name: JetpackLoop
+    clip: {fileID: 8300000, guid: f69c24da6c6604e7695341e20cc86ac5, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    isMusic: 0
+    source: {fileID: 0}
+  - name: Hit
+    clip: {fileID: 8300000, guid: 4953cabf9e8f944c9bbb35e82e6efb1f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    isMusic: 0
+    source: {fileID: 0}
+  - name: Explode
+    clip: {fileID: 8300000, guid: 660bd92eb948645bda8fce13a14da634, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    isMusic: 0
+    source: {fileID: 0}
+  - name: Hurt
+    clip: {fileID: 8300000, guid: f6a7ddbbd88ca4260a90307e39287538, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    isMusic: 0
+    source: {fileID: 0}
+  - name: Fire
+    clip: {fileID: 8300000, guid: 7f578a01ecd8842af99831936c8b224f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    isMusic: 0
+    source: {fileID: 0}
+  - name: Jammed
+    clip: {fileID: 8300000, guid: 62b66a416117c4852a9711b0d8d7632c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    isMusic: 0
+    source: {fileID: 0}
+  masterVolume: 1
+  musicVolume: 0.603
+  sfxVolume: 1

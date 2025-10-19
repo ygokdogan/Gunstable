@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 namespace Enemies
@@ -9,6 +10,7 @@ namespace Enemies
         public float cooldown;
         public GameObject bulletPrefab;
         public Transform shootPos;
+        public GameObject cantBeDamagedText;
 
         protected override void Update()
         {
@@ -45,6 +47,14 @@ namespace Enemies
 
         public override void Damage(int damage)
         {
+            StartCoroutine(DisplayText(.7f));
+        }
+
+        private IEnumerator DisplayText(float delay)
+        {
+            cantBeDamagedText.SetActive(true);
+            yield return new WaitForSeconds(delay);
+            cantBeDamagedText.SetActive(false);
         }
     }
 }

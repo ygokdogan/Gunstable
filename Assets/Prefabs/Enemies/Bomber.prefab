@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42844658c46074ef093a46c9a2069453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemies.EnemyBomber
-  maxHealth: 1
+  maxHealth: 3
   currentHealth: 0
   moveSpeed: 12
   playerLayer:
@@ -245,7 +245,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
-  agroRange: 15
+  agroRange: 18
   groundCheck: {fileID: 7411786250374886015}
   wallCheck: {fileID: 8546425443635294158}
   ledgeCheck: {fileID: 2865805210302982670}
@@ -255,7 +255,6 @@ MonoBehaviour:
   wallCheckDistance: 0.5
   bloodParticles: {fileID: 4179907014426319822}
   explosionEffect: {fileID: 6365061707112250910, guid: 1a015e4bcdd1e40f79efcfa97fbb3f11, type: 3}
-  chaseRange: 10
   explodeRange: 2
   explodeRadius: 3
   jumpExplodeDelay: 0.2

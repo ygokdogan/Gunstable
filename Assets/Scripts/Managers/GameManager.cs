@@ -10,7 +10,6 @@ namespace Managers
         public static GameManager instance;
         
         public AudioManager audioManager;
-        public MusicPlayer musicPlayer;
         
         private float speedrunTimer = 0f;
         private bool gameStarted = false;
@@ -24,10 +23,8 @@ namespace Managers
             DontDestroyOnLoad(gameObject);
             
             speedrunTimer = 0f;
-            musicPlayer = GetComponent<MusicPlayer>();
             audioManager = GetComponent<AudioManager>();
-            var menuMusic = audioManager.Get("MainMenuMusic");
-            musicPlayer.PlayMusic(menuMusic.clip);
+            audioManager.Play("MainMenuMusic");
         }
 
         private void Update()
@@ -50,13 +47,23 @@ namespace Managers
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             gameStarted = true;
-            var inGameMusic = audioManager.Get("InGameMusic");
-            musicPlayer.PlayMusic(inGameMusic.clip);
+            audioManager.Stop("MainMenuMusic");
+            audioManager.Play("InGameMusic");
         }
 
         public void Exit()
         {
             Application.Quit();
+        }
+
+        public float GetTimer()
+        {
+            return speedrunTimer;
+        }
+
+        public void StopTimer()
+        {
+            gameStarted = false;
         }
     }
 }

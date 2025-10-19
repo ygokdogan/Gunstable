@@ -488,6 +488,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4301122405576577688, guid: b686d431aee5a4a1c80d236b7ab055c8, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 2020138584}
     - target: {fileID: 4471960454079111122, guid: b686d431aee5a4a1c80d236b7ab055c8, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -664,11 +668,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4903569382602518792, guid: bf0953a6b05c44065bd83ca181f2e2f1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.706615
+      value: -22.990602
       objectReference: {fileID: 0}
     - target: {fileID: 4903569382602518792, guid: bf0953a6b05c44065bd83ca181f2e2f1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.038826
+      value: 14.039284
       objectReference: {fileID: 0}
     - target: {fileID: 7828364458918207187, guid: bf0953a6b05c44065bd83ca181f2e2f1, type: 3}
       propertyPath: Lens.OrthographicSize
@@ -763,6 +767,11 @@ MonoBehaviour:
     MaxWindowSize: 0
     Padding: 0
   m_LegacyMaxWindowSize: -2
+--- !u!20 &2020138584 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8900832548766276181, guid: bf0953a6b05c44065bd83ca181f2e2f1, type: 3}
+  m_PrefabInstance: {fileID: 2020138581}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2032097140
 PrefabInstance:
   m_ObjectHideFlags: 0

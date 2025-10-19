@@ -38,13 +38,16 @@ public class Bullet : MonoBehaviour
     public void Setup(Vector2 direction, GameObject source)
     {
         this.direction = direction;
-        direction.Normalize();
+        this.direction.Normalize();
         this.source = source;
 
         transform.right = this.direction;
 
         lifeTimer = lifeTime;
-        GameManager.instance.audioManager.Play("Fire");
+        if (type != BulletType.Skip)
+        {
+            GameManager.instance.audioManager.Play("Fire");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)

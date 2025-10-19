@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Input;
+using Managers;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -26,7 +27,7 @@ namespace Player
         }
 
         private void Update()
-        {
+        {   
             if (input.ShootInput && CanShoot())
             {
                 Shoot();
@@ -84,7 +85,7 @@ namespace Player
                     break;
 
                 case Bullet.BulletType.Skip:
-                    Debug.Log("Skipped");
+                    GameManager.instance.audioManager.Play("Jammed");
                     break;
             }
         }

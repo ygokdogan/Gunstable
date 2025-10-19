@@ -16,12 +16,13 @@ namespace Player
         
         public FlashEffect flash;
 
-        private GameObject currentSprites;
+        public GameObject CurrentSprites { get; private set; }
+        public GameObject gunObj;
 
         private void Awake()
         {
-            currentSprites = withoutJetpack;
-            anim = currentSprites.GetComponent<Animator>();
+            CurrentSprites = withoutJetpack;
+            anim = CurrentSprites.GetComponent<Animator>();
             player = GetComponent<PlayerController>();
             input = GetComponent<InputHandler>();
         }
@@ -33,11 +34,11 @@ namespace Player
 
         public void UnlockJetpack()
         {
-            if (currentSprites == withJetpack)
+            if (CurrentSprites == withJetpack)
                 return;
             
             withJetpack.SetActive(true);
-            currentSprites = withJetpack;
+            CurrentSprites = withJetpack;
             anim = withJetpack.GetComponent<Animator>();
             withoutJetpack.SetActive(false);
         }

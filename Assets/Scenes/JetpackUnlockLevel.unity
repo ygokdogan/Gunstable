@@ -218,6 +218,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4301122405576577688, guid: b686d431aee5a4a1c80d236b7ab055c8, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1433926712}
     - target: {fileID: 4471960454079111122, guid: b686d431aee5a4a1c80d236b7ab055c8, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -393,11 +397,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4903569382602518792, guid: bf0953a6b05c44065bd83ca181f2e2f1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.763147
+      value: -24.047194
       objectReference: {fileID: 0}
     - target: {fileID: 4903569382602518792, guid: bf0953a6b05c44065bd83ca181f2e2f1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.835709
+      value: 16.83612
       objectReference: {fileID: 0}
     - target: {fileID: 7828364458918207187, guid: bf0953a6b05c44065bd83ca181f2e2f1, type: 3}
       propertyPath: Lens.OrthographicSize
@@ -467,6 +471,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 158754022}
   m_SourcePrefab: {fileID: 100100000, guid: bf0953a6b05c44065bd83ca181f2e2f1, type: 3}
+--- !u!20 &1433926712 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8900832548766276181, guid: bf0953a6b05c44065bd83ca181f2e2f1, type: 3}
+  m_PrefabInstance: {fileID: 1433926711}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1819424586
 GameObject:
   m_ObjectHideFlags: 0

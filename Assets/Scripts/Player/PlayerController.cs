@@ -71,6 +71,8 @@ namespace Player
         {
             HandleAllMovement();
 
+            UiManager.SetIsHacked(isHacked);
+
             if (!canMove && (rb.linearVelocity.magnitude < 1f || Time.time >= recoilStartTime + 0.4f))
             {
                 canMove = true;
@@ -244,13 +246,13 @@ namespace Player
         public void Die()
         {
             Time.timeScale = 1f;
-            Destroy(gameObject);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            StartCoroutine(RestartLevel(0.43f));
         }
 
         public void UnlockJetpack()
         {
             animController.UnlockJetpack();
+            UiManager.UnlockJetpack();
             data.acquiredJetpack = true;
         }
 
@@ -271,6 +273,15 @@ namespace Player
                 
                 yield return new WaitForSeconds(delay);
             } 
+        }
+
+        private IEnumerator RestartLevel(float delay)
+        {
+            canMove = false;
+            animController.CurrentSprites.SetActive(false);
+            animController.gunObj.SetActive(false);
+            yield return new WaitForSeconds(delay);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         private IEnumerator SlowTimeOnDamage(float duration)
