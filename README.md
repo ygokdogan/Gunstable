@@ -15,22 +15,22 @@ Blast through robots with a weapon that picks its own ammo, and fly a jetpack po
 [![URP](https://img.shields.io/badge/URP-2D-5C2D91?style=for-the-badge)](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest)
 [![Platforms](https://img.shields.io/badge/Windows%20%7C%20macOS-playable-ffd65c?style=for-the-badge)](https://github.com/ygokdogan/Gunstable/releases)
 
-[**⬇️ Download**](https://github.com/ygokdogan/Gunstable/releases/latest) · [**🎮 How to Play**](#-how-to-play) · [**🎲 Mechanics**](#-the-dice-decide) · [**🛠️ Build from Source**](#%EF%B8%8F-build-from-source)
+[**Download**](https://github.com/ygokdogan/Gunstable/releases/latest) · [**How to Play**](#how-to-play) · [**Mechanics**](#the-dice-decide) · [**Build from Source**](#build-from-source)
 
 </div>
 
 ---
 
-## 🎲 The Dice Decide
+## The Dice Decide
 
 In **Gunstable**, nothing is guaranteed. Every time you pull the trigger, the gun rolls for which bullet comes out.
 
-| Roll | Bullet | Chance | What happens |
-|:---:|:---|:---:|:---|
-| 🔫 | **Default** | 45% | A clean, straight shot. Enjoy it while it lasts. |
-| 💥 | **Pump** | 20% | A 5-pellet shotgun spread across 20°. |
-| 🚀 | **Recoil** | 20% | Fires, then launches *you* backwards. Use it to reach new places or fly straight into danger. |
-| 🚫 | **Jammed** | 15% | *Click.* Nothing. Hope you weren't counting on that one. |
+| Bullet | Chance | What happens |
+|:---|:---:|:---|
+| **Default** | 45% | A clean, straight shot. Enjoy it while it lasts. |
+| **Pump** | 20% | A 5-pellet shotgun spread across 20°. |
+| **Recoil** | 20% | Fires, then launches *you* backwards. Use it to reach new places or fly straight into danger. |
+| **Jammed** | 15% | *Click.* Nothing. Hope you weren't counting on that one. |
 
 ### The Lucky Jetpack
 
@@ -40,7 +40,7 @@ Partway through the game you find a **jetpack**. While you fly, a die rolls abov
 
 ---
 
-## 🤖 Meet the Cast
+## Meet the Cast
 
 <table>
   <tr>
@@ -59,7 +59,7 @@ Partway through the game you find a **jetpack**. While you fly, a die rolls abov
     <td align="center"><img src="docs/images/jetpack.gif" width="120" alt="Jetpack"><br><b>You + Jetpack</b></td>
     <td align="center"><img src="docs/images/bomber_explode.gif" width="120" alt="Bomber exploding"><br><b>Boom</b></td>
     <td align="center"><img src="docs/images/turret.gif" width="120" alt="Turret"><br><b>Turret</b></td>
-    <td align="center">⏱️<br><b>The Clock</b></td>
+    <td align="center"><b>The Clock</b></td>
   </tr>
   <tr>
     <td valign="top">Hold jump to fly. Watch the die.</td>
@@ -71,7 +71,7 @@ Partway through the game you find a **jetpack**. While you fly, a die rolls abov
 
 ---
 
-## 🎮 How to Play
+## How to Play
 
 | Action | Input |
 |:---|:---|
@@ -84,7 +84,7 @@ Partway through the game you find a **jetpack**. While you fly, a die rolls abov
 
 Get through **6 levels**, from the first steps to the jetpack unlock to the final room, as fast as you can.
 
-### ⬇️ Download
+### Download
 
 Grab the latest build for **Windows** or **macOS** from the [**Releases**](https://github.com/ygokdogan/Gunstable/releases/latest) page, unzip it, and run.
 
@@ -92,7 +92,7 @@ Grab the latest build for **Windows** or **macOS** from the [**Releases**](https
 
 ---
 
-## 🛠️ Build from Source
+## Build from Source
 
 **Requirements:** [Unity **6000.2.8f1**](https://unity.com/releases/editor/archive) (Unity 6) with the 2D packages
 
@@ -130,8 +130,8 @@ Assets/
 
 <div align="center">
 
-Made with ☕ and questionable RNG by [**Yusuf Emir Gökdoğan**](https://github.com/ygokdogan)
+Made with questionable RNG by [**Yusuf Emir Gökdoğan**](https://github.com/ygokdogan)
 
-⭐ If you enjoyed it, a star helps a lot!
+If you enjoyed it, a star helps a lot!
 
 </div>
